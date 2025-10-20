@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Achmad Alfi Maksum - Portfolio</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700;800&display=swap"
+    rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+    <header id="navbar">
+    <div class="container">
+        <a href="#hero" class="logo">Maksum</a>
+        <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li>
+            <a href="#contact"><button class="cta-button">Contact</button></a>
+            </li>
+        </ul>
+        </nav>
+    </div>
+    </header>
+
+    <main>
+    <div id="success-notification" class="notification-box" style="display: none;">
+        Pesan Berhasil Terkirim! Terima kasih atas kontak Anda.
+    </div>
+    <section id="hero" class="hero-section">
+        <div class="container hero-content">
+            <div class="hero-text fade-in-up">
+                <h2>Achmad Alfi Maksum</h2> 
+                <p class="description">
+                Lulusan SMK Telkom Darul Ulum Jombang (TKJ), aktif di HMTI
+                sebagai penanggung jawab Study Excursie. Berpengalaman di desain grafis (Photoshop, CorelDRAW, Canva), berpartisipasi dalam
+                Olimpiade Mikrotik Nasional (tahap 4), dan memiliki pengalaman berwirausaha seperti menjual workshirt, angkringan kopi, serta
+                mengelola toko baju sendiri.
+                </p>
+            </div>
+
+            <div class="hero-image fade-in-up delay-200">
+                <div class="profile-frame">
+                    <img src="profile.jpg" alt="Achmad Alfi Maksum Profile" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section bg-light">
+        <div class="container about-container">
+            <div class="about-image fade-in-up">
+                <img src="about-profile.jpg" alt="Foto Profil Maksum di About Section" />
+            </div>
+            <div class="about-content fade-in-up delay-100">
+                <h2 class="section-title-left">About Me</h2>
+                <p>
+                Saya Achmad Alfi Maksum, mahasiswa yang berawal dari jurusan Teknik Komputer dan Jaringan (TKJ) di SMK Telkom Darul Ulum
+                Jombang. Perjalanan ini meluas ke studi Sistem Informasi Bisnis di Politeknik Negeri Malang, mencerminkan minat saya pada
+                teknologi dan aplikasinya dalam dunia usaha.
+                </p>
+                <p>
+                Saat ini, saya aktif di HMTI sebagai Penanggung Jawab Study Excursie 2025. Selain itu, saya memiliki kemampuan dalam desain
+                grafis (Photoshop, CorelDRAW, Canva), jaringan komputer (Mikrotik, Troubleshooting), dan pengelolaan bisnis kecil, termasuk
+                toko baju dan angkringan kopi.
+                </p>
+                <p>
+                Saya percaya bahwa kombinasi antara teknologi dan kreativitas dapat menciptakan solusi yang bermanfaat bagi banyak orang, dan
+                saya selalu bersemangat untuk menghadapi tantangan baru dalam pengembangan diri dan bisnis.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card fade-in-up delay-100">
+                    <div class="icon-box"><i class="fas fa-code"></i></div> 
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS, JavaScript</p>
+                </div>
+
+                <div class="skill-card fade-in-up delay-200">
+                    <div class="icon-box"><i class="fas fa-network-wired"></i></div> 
+                    <h3>Networking</h3>
+                    <p>TKJ, Mikrotik, Troubleshooting</p>
+                </div>
+
+                <div class="skill-card fade-in-up delay-300">
+                    <div class="icon-box"><i class="fas fa-palette"></i></div> 
+                    <h3>Design & Creative</h3>
+                    <p>Photoshop, CorelDRAW, Canva</p>
+                </div>
+
+                <div class="skill-card fade-in-up delay-400">
+                    <div class="icon-box"><i class="fas fa-store"></i></div> 
+                    <h3>Entrepreneurship</h3>
+                    <p>Menjalankan toko baju & angkringan kopi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section bg-light">
+        <div class="container contact-container">
+            <h2 class="section-title fade-in-up">Get In Touch</h2>
+
+            <div class="contact-grid">
+                <form class="contact-form fade-in-up delay-100" action="PHP1/process.php" method="POST">
+                    <input type="text" name="name" placeholder="Nama Anda" required />
+                    <input type="email" name="email" placeholder="Email Anda" required />
+                    <textarea name="message" placeholder="Pesan Anda" rows="6" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+
+                <div class="social-links fade-in-up delay-200">
+                    <h3>Connect with Me</h3>
+                    <p>Saya terbuka untuk kolaborasi proyek atau diskusi.</p>
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://wa.me/6285852377736" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer>
+    <div class="container">
+        <p>&copy; 2025 Achmad Alfi Maksum — All Rights Reserved.</p>
+        <a href="#hero" class="back-to-top">Back to Top <i class="fas fa-arrow-up"></i></a>
+    </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
