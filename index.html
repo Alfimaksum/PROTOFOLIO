@@ -1,148 +1,225 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Achmad Alfi Maksum - Portfolio</title>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-
-    <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700;800&display=swap"
-    rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-</head>
-<body>
-    <header id="navbar">
-    <div class="container">
-        <a href="#hero" class="logo">Maksum</a>
-        <nav>
-        <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li>
-            <a href="#contact"><button class="cta-button">Contact</button></a>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <style>
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+      .fade-in-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .notification-box {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10000;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+      .notification-box.show {
+        opacity: 1;
+      }
+      .navbar {
+        transition: all 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary fs-3" href="#home">Maksum</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="LOGIN/index.php">Login</a></li>
+            <li class="nav-item">
+              <a class="btn btn-primary ms-2" href="#contact">Contact</a>
             </li>
-        </ul>
-        </nav>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Success Notification -->
+    <div id="success-notification" class="notification-box alert alert-success" style="display: none">
+      <i class="fas fa-check-circle me-2"></i>Pesan Berhasil Terkirim! Terima kasih atas kontak Anda.
     </div>
-    </header>
 
-    <main>
-    <div id="success-notification" class="notification-box" style="display: none;">
-        Pesan Berhasil Terkirim! Terima kasih atas kontak Anda.
-    </div>
-    <section id="hero" class="hero-section">
-        <div class="container hero-content">
-            <div class="hero-text fade-in-up">
-                <h2>Achmad Alfi Maksum</h2> 
-                <p class="description">
-                Lulusan SMK Telkom Darul Ulum Jombang (TKJ), aktif di HMTI
-                sebagai penanggung jawab Study Excursie. Berpengalaman di desain grafis (Photoshop, CorelDRAW, Canva), berpartisipasi dalam
-                Olimpiade Mikrotik Nasional (tahap 4), dan memiliki pengalaman berwirausaha seperti menjual workshirt, angkringan kopi, serta
-                mengelola toko baju sendiri.
-                </p>
+    <!-- Hero Section -->
+    <section id="home" class="min-vh-100 d-flex align-items-center bg-light">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 fade-in-up">
+            <h1 class="display-4 fw-bold text-primary mb-4">Achmad Alfi Maksum</h1>
+            <p class="lead mb-4">
+              Lulusan SMK Telkom Darul Ulum Jombang (TKJ), aktif di HMTI sebagai penanggung jawab Study Excursie. Berpengalaman di desain
+              grafis (Photoshop, CorelDRAW, Canva), berpartisipasi dalam Olimpiade Mikrotik Nasional (tahap 4), dan memiliki pengalaman
+              berwirausaha seperti menjual workshirt, angkringan kopi, serta mengelola toko baju sendiri.
+            </p>
+          </div>
+          <div class="col-lg-6 fade-in-up">
+            <div class="text-center">
+              <div class="border border-4 border-primary rounded-3 p-2 d-inline-block">
+                <img src="profile.jpg" alt="Profile" class="img-fluid rounded-2" style="max-height: 500px" />
+              </div>
             </div>
-
-            <div class="hero-image fade-in-up delay-200">
-                <div class="profile-frame">
-                    <img src="profile.jpg" alt="Achmad Alfi Maksum Profile" />
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section id="about" class="section bg-light">
-        <div class="container about-container">
-            <div class="about-image fade-in-up">
-                <img src="about-profile.jpg" alt="Foto Profil Maksum di About Section" />
-            </div>
-            <div class="about-content fade-in-up delay-100">
-                <h2 class="section-title-left">About Me</h2>
-                <p>
-                Saya Achmad Alfi Maksum, mahasiswa yang berawal dari jurusan Teknik Komputer dan Jaringan (TKJ) di SMK Telkom Darul Ulum
-                Jombang. Perjalanan ini meluas ke studi Sistem Informasi Bisnis di Politeknik Negeri Malang, mencerminkan minat saya pada
-                teknologi dan aplikasinya dalam dunia usaha.
-                </p>
-                <p>
-                Saat ini, saya aktif di HMTI sebagai Penanggung Jawab Study Excursie 2025. Selain itu, saya memiliki kemampuan dalam desain
-                grafis (Photoshop, CorelDRAW, Canva), jaringan komputer (Mikrotik, Troubleshooting), dan pengelolaan bisnis kecil, termasuk
-                toko baju dan angkringan kopi.
-                </p>
-                <p>
-                Saya percaya bahwa kombinasi antara teknologi dan kreativitas dapat menciptakan solusi yang bermanfaat bagi banyak orang, dan
-                saya selalu bersemangat untuk menghadapi tantangan baru dalam pengembangan diri dan bisnis.
-                </p>
-            </div>
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-white">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-4 mb-4">
+            <img src="about-profile.jpg" alt="About" class="img-fluid rounded shadow" />
+          </div>
+          <div class="col-md-8">
+            <h2 class="text-primary mb-4">About Me</h2>
+            <p class="mb-3">
+              Saya Achmad Alfi Maksum, mahasiswa yang berawal dari jurusan Teknik Komputer dan Jaringan (TKJ) di SMK Telkom Darul Ulum
+              Jombang. Perjalanan ini meluas ke studi Sistem Informasi Bisnis di Politeknik Negeri Malang, mencerminkan minat saya pada
+              teknologi dan aplikasinya dalam dunia usaha.
+            </p>
+            <p class="mb-3">
+              Saat ini, saya aktif di HMTI sebagai Penanggung Jawab Study Excursie 2025. Selain itu, saya memiliki kemampuan dalam desain
+              grafis (Photoshop, CorelDRAW, Canva), jaringan komputer (Mikrotik, Troubleshooting), dan pengelolaan bisnis kecil, termasuk
+              toko baju dan angkringan kopi.
+            </p>
+            <p>
+            Saya percaya bahwa kombinasi antara teknologi dan kreativitas dapat menciptakan solusi yang bermanfaat bagi banyak orang, dan
+            saya selalu bersemangat untuk menghadapi tantangan baru dalam pengembangan diri dan bisnis.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in-up">Skills & Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card fade-in-up delay-100">
-                    <div class="icon-box"><i class="fas fa-code"></i></div> 
-                    <h3>Web Development</h3>
-                    <p>HTML, CSS, JavaScript</p>
-                </div>
-
-                <div class="skill-card fade-in-up delay-200">
-                    <div class="icon-box"><i class="fas fa-network-wired"></i></div> 
-                    <h3>Networking</h3>
-                    <p>TKJ, Mikrotik, Troubleshooting</p>
-                </div>
-
-                <div class="skill-card fade-in-up delay-300">
-                    <div class="icon-box"><i class="fas fa-palette"></i></div> 
-                    <h3>Design & Creative</h3>
-                    <p>Photoshop, CorelDRAW, Canva</p>
-                </div>
-
-                <div class="skill-card fade-in-up delay-400">
-                    <div class="icon-box"><i class="fas fa-store"></i></div> 
-                    <h3>Entrepreneurship</h3>
-                    <p>Menjalankan toko baju & angkringan kopi</p>
-                </div>
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center text-primary mb-5">Skills & Expertise</h2>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center p-4">
+                <i class="fas fa-code fa-3x text-primary mb-3"></i>
+                <h5 class="card-title">Web Development</h5>
+                <p class="card-text">HTML, CSS, JavaScript</p>
+              </div>
             </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center p-4">
+                <i class="fas fa-network-wired fa-3x text-primary mb-3"></i>
+                <h5 class="card-title">Networking</h5>
+                <p class="card-text">TKJ, Mikrotik, Troubleshooting</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center p-4">
+                <i class="fas fa-palette fa-3x text-primary mb-3"></i>
+                <h5 class="card-title">Design & Creative</h5>
+                <p class="card-text">Photoshop, CorelDRAW, Canva</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center p-4">
+                <i class="fas fa-store fa-3x text-primary mb-3"></i>
+                <h5 class="card-title">Entrepreneurship</h5>
+                <p class="card-text">Menjalankan toko baju & angkringan kopi</p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section id="contact" class="section bg-light">
-        <div class="container contact-container">
-            <h2 class="section-title fade-in-up">Get In Touch</h2>
-
-            <div class="contact-grid">
-                <form class="contact-form fade-in-up delay-100" action="PHP1/process.php" method="POST">
-                    <input type="text" name="name" placeholder="Nama Anda" required />
-                    <input type="email" name="email" placeholder="Email Anda" required />
-                    <textarea name="message" placeholder="Pesan Anda" rows="6" required></textarea>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-
-                <div class="social-links fade-in-up delay-200">
-                    <h3>Connect with Me</h3>
-                    <p>Saya terbuka untuk kolaborasi proyek atau diskusi.</p>
-                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                    <a href="https://wa.me/6285852377736" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-white">
+      <div class="container">
+        <h2 class="text-center text-primary mb-5">Get In Touch</h2>
+        <div class="row">
+          <div class="col-lg-8">
+            <form class="row g-3" action="CRUD/process.php" method="POST">
+              <div class="col-md-6">
+                <input type="text" name="name" class="form-control" placeholder="Nama Anda" required />
+              </div>
+              <div class="col-md-6">
+                <input type="email" name="email" class="form-control" placeholder="Email Anda" required />
+              </div>
+              <div class="col-12">
+                <textarea name="message" class="form-control" rows="6" placeholder="Pesan Anda" required></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Connect with Me</h5>
+                <p class="card-text">Saya terbuka untuk kolaborasi proyek atau diskusi.</p>
+                <div class="d-flex flex-column gap-2">
+                  <a href="https://github.com" class="text-decoration-none" target="_blank"> <i class="fab fa-github me-2"></i>GitHub </a>
+                  <a href="https://linkedin.com" class="text-decoration-none" target="_blank">
+                    <i class="fab fa-linkedin me-2"></i>LinkedIn
+                  </a>
+                  <a href="https://instagram.com" class="text-decoration-none" target="_blank">
+                    <i class="fab fa-instagram me-2"></i>Instagram
+                  </a>
+                  <a href="https://wa.me/6285852377736" class="text-decoration-none" target="_blank">
+                    <i class="fab fa-whatsapp me-2"></i>WhatsApp
+                  </a>
+                  <a href="CRUD/tampilan.php" class="text-decoration-none fw-bold text-primary">
+                    <i class="fas fa-database me-2"></i>Lihat Data Pesan
+                  </a>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-    </main>
 
-    <footer>
-    <div class="container">
-        <p>&copy; 2025 Achmad Alfi Maksum — All Rights Reserved.</p>
-        <a href="#hero" class="back-to-top">Back to Top <i class="fas fa-arrow-up"></i></a>
-    </div>
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-4">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="mb-0">&copy; 2025 Achmad Alfi Maksum — All Rights Reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="#home" class="text-white text-decoration-none"> Back to Top <i class="fas fa-arrow-up ms-1"></i> </a>
+          </div>
+        </div>
+      </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
