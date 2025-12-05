@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     checkSubmissionStatus();
 });
 
-// Navbar scroll effect
 function handleNavbarScroll() {
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
@@ -16,7 +15,6 @@ function handleNavbarScroll() {
     });
 }
 
-// Scroll animations
 function handleScrollAnimations() {
     const observerOptions = {
         root: null,
@@ -38,7 +36,6 @@ function handleScrollAnimations() {
     });
 }
 
-// Check submission status
 function checkSubmissionStatus() {
     const urlParams = new URLSearchParams(window.location.search);
     const status = urlParams.get('status');

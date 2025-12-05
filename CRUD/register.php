@@ -1,13 +1,15 @@
 <?php
 session_start();
-if (isset($_SESSION['user_id'])) {
-    header("Location: dashboard.php");
+// Perbaikan: Sesuaikan dengan session di login.php
+if (isset($_SESSION['username'])) {
+    header("Location: tampilan.php");
     exit;
 }
 
-include 'config.php';
-if (!$dbconn) {
-    die('Koneksi database gagal: ' . pg_last_error());
+include 'Koneksi.php';
+// PERBAIKAN: Gunakan variabel yang sama dengan Koneksi.php
+if (!$db_conn) { // Ganti $dbconn menjadi $db_conn
+    die('Koneksi database gagal: ' . pg_last_error($db_conn)); // Tambahkan parameter
 }
 
 $success = '';
@@ -32,9 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error = 'Format email tidak valid!';
     } else {
-        // Gunakan koneksi $dbconn (bukan $db_conn)
+        // PERBAIKAN: Gunakan $db_conn yang konsisten
         $check_query = "SELECT * FROM users WHERE username = $1 OR email = $2";
-        $check_result = pg_query_params($dbconn, $check_query, array($username, $email));
+        $check_result = pg_query_params($db_conn, $check_query, array($username, $email)); // Ganti $dbconn menjadi $db_conn
 
         if (pg_num_rows($check_result) > 0) {
             $error = 'Username atau email sudah terdaftar!';
@@ -42,12 +44,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
             
             $query = "INSERT INTO users (username, email, password) VALUES ($1, $2, $3)";
-            $result = pg_query_params($dbconn, $query, array($username, $email, $hashed_password));
+            // PERBAIKAN: Gunakan $db_conn yang konsisten
+            $result = pg_query_params($db_conn, $query, array($username, $email, $hashed_password)); // Ganti $dbconn menjadi $db_conn
             if ($result) {
                 $success = 'Registrasi berhasil! Silakan login.';
                 $_POST = array();
             } else {
-                $error = 'Terjadi kesalahan saat registrasi!';
+                $error = 'Terjadi kesalahan saat registrasi: ' . pg_last_error($db_conn);
             }
         }
     }
